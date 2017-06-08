@@ -32,9 +32,21 @@ public class Sala {
 		System.out.println(listaAluno[index].getnome()+" : "+listaAluno[index].getidade());
 		
 		for(int j=0;j<2;j++){
-			
+				System.gc();
 			if(listaAluno[j].getcor().equals("rosa") || listaAluno[j].getcor().equals("ROSA")){
 				System.out.println(listaAluno[j].getnome());
+			}
+		}
+	}
+	
+	public void colocarnotaDisciplina(String disciplina, float[] nota, int quantdisciplina, Aluno[] aluno){
+		String[] listaDisciplina;
+		for(int i=0; i < quantdisciplina; i++){
+			listaDisciplina = aluno[i].getnomeDisciplina();
+			for(int j =0; j < listaDisciplina.length;j++){
+				if (listaDisciplina[j].equals(disciplina));{
+					aluno[i].setnotaAluno(nota, j);
+				}
 			}
 		}
 	}
