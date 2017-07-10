@@ -16,6 +16,11 @@ public class Data {
     
     Data(int dia, int mes, int ano){
         if(verificaData(dia, mes, ano) == true){
+            this.dia = dia;
+            this.mes = mes;
+            this.ano = ano;
+        }
+        else System.err.println("Date invalid type");
     }
     
     private boolean verificaData(int d, int m, int a){
